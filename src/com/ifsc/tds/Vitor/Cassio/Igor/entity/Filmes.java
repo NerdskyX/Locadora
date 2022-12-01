@@ -1,6 +1,6 @@
 package com.ifsc.tds.Vitor.Cassio.Igor.entity;
 
-public class filmes {
+public class Filmes {
 	private Long id;
 	private String nome;
 	private String data_lancamento;

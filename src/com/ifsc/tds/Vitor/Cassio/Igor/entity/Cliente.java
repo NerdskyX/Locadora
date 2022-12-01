@@ -2,7 +2,7 @@ package com.ifsc.tds.Vitor.Cassio.Igor.entity;
 
 import java.sql.Date;
 
-public class cliente {
+public class Cliente {
 	private Long id;
 	private String nome;
 	private String email;
