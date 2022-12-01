@@ -11,7 +11,6 @@ public class Emprestimo {
 	private String valorEmprestimo;
 	private Cliente cliente;
 	private Filmes filmes;
-	private Date ano;
 	
 	public Long getId() {
 		return id;
@@ -55,14 +54,12 @@ public class Emprestimo {
 	public void setFilmes(Filmes filmes) {
 		this.filmes = filmes;
 	}
-	public Date getAno() {
-		return ano;
-	}
-	public void setAno(Date ano) {
-		this.ano = ano;
-	}
 	public String getAnoFormatado() {
 		DateTimeFormatter dataFormatada = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		return this.ano.toLocalDate().format(dataFormatada).toString();
+		return this.data_esmprestimo.toLocalDate().format(dataFormatada).toString();
+	}
+	public String getAnoFormatado2() {
+		DateTimeFormatter dataFormatada = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		return this.data_entrega.toLocalDate().format(dataFormatada).toString();
 	}
 }
