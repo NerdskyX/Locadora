@@ -37,8 +37,10 @@ public class ClienteDAO implements DAO<Cliente> {
 
 				// atribui campo para atributo
 				Cliente.setId(rset.getLong("id"));
-				Cliente.setCor(rset.getString("cor"));
-				Cliente.setCodigoEtiqueta(rset.getString("codigo_etiqueta"));
+				Cliente.setNome(rset.getString("nome"));
+				Cliente.setEmail(rset.getString("email"));
+				Cliente.setTelefone(rset.getString("telefone"));
+				Cliente.setData_cadastro(rset.getDate("data_cadastro"));
 			}
 
 		} catch (Exception e) {
@@ -86,8 +88,10 @@ public class ClienteDAO implements DAO<Cliente> {
 
 				// atribui campo para atributo
 				Cliente.setId(rset.getLong("id"));
-				Cliente.setCor(rset.getString("cor"));
-				Cliente.setCodigoEtiqueta(rset.getString("codigo_etiqueta"));
+				Cliente.setNome(rset.getString("nome"));
+				Cliente.setEmail(rset.getString("email"));
+				Cliente.setTelefone(rset.getString("telefone"));
+				Cliente.setData_cadastro(rset.getDate("data_cadastro"));
 
 				Clientes.add(Cliente);
 			}
@@ -112,7 +116,7 @@ public class ClienteDAO implements DAO<Cliente> {
 
 	@Override
 	public int save(Cliente Cliente) {
-		String sql = "insert into Cliente (cor, codigo_etiqueta)" + " values (?, ?)";
+		String sql = "insert into Cliente (nome, email, telefone, data_cadastro )" + " values (?, ?, ?. ?)";
 
 		// Recupera a conex�o com o banco
 		Connection conexao = null;
@@ -125,8 +129,10 @@ public class ClienteDAO implements DAO<Cliente> {
 			conexao = new Conexao().getConnection();
 
 			stm = conexao.prepareStatement(sql);
-			stm.setString(1, Cliente.getCor());
-			stm.setString(2, Cliente.getCodigoEtiqueta());
+			stm.setString(1, Cliente.getNome());
+			stm.setString(2, Cliente.getEmail());
+			stm.setString(3, Cliente.getTelefone());
+			stm.setDate(4, Cliente.getData_cadastro());
 
 			stm.execute();
 
@@ -151,7 +157,7 @@ public class ClienteDAO implements DAO<Cliente> {
 
 	@Override
 	public boolean update(Cliente Cliente, String[] params) {
-		String sql = "update Cliente set cor = ?, codigo_etiqueta = ? where id = ?";
+		String sql = "update Cliente set nome = ?, email = ?, telefone = ?, data_cadastro = ? where id = ?";
 
 		// Recupera a conex�o com o banco
 		Connection conexao = null;
@@ -163,9 +169,11 @@ public class ClienteDAO implements DAO<Cliente> {
 			conexao = new Conexao().getConnection();
 
 			stm = conexao.prepareStatement(sql);
-			stm.setString(1, Cliente.getCor());
-			stm.setString(2, Cliente.getCodigoEtiqueta());
-			stm.setLong(3, Cliente.getId());
+			stm.setString(1, Cliente.getNome());
+			stm.setString(2, Cliente.getEmail());
+			stm.setString(3, Cliente.getTelefone());
+			stm.setDate(4, Cliente.getData_cadastro());
+			stm.setLong(5, Cliente.getId());
 
 			stm.execute();
 
