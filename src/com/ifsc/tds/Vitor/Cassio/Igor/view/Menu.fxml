@@ -15,7 +15,6 @@
               <MenuItem fx:id="mnFilmes" mnemonicParsing="false" onAction="#onClickMnFilmes" text="Filmes" />
                   <MenuItem fx:id="mnEmprestimos" mnemonicParsing="false" onAction="#onClickMnEmprestimos" text="Emprestimos" />
                   <MenuItem fx:id="mnSair" mnemonicParsing="false" onAction="#onClickMnSair" text="Sair" />
-                  <MenuItem fx:id="mnFilmes1" mnemonicParsing="false" onAction="#onClickMnF" text="Filmes" />
             </items>
           </Menu>
           <Menu fx:id="menuAjuda" mnemonicParsing="false" text="Ajuda">
