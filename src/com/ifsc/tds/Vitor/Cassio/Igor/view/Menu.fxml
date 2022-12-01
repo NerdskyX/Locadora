@@ -5,22 +5,22 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="pnlPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ifst.tds.Vitor.Cassio.Igor.controller.MenuController">
    <children>
-      <MenuBar>
+      <MenuBar fx:id="menuBar">
         <menus>
-          <Menu mnemonicParsing="false" text="Cadastro">
+          <Menu fx:id="menuCadastro" mnemonicParsing="false" text="Cadastro">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Clientes" />
-              <MenuItem mnemonicParsing="false" text="Filmes" />
-                  <MenuItem mnemonicParsing="false" text="Emprestimos" />
-                  <MenuItem mnemonicParsing="false" text="Sair" />
+                  <MenuItem fx:id="mnClientes" mnemonicParsing="false" onAction="#onClickMnClientes" text="Clientes" />
+              <MenuItem fx:id="mnFilmes" mnemonicParsing="false" onAction="#onClickMnFilmes" text="Filmes" />
+                  <MenuItem fx:id="mnEmprestimos" mnemonicParsing="false" onAction="#onClickMnEmprestimos" text="Emprestimos" />
+                  <MenuItem fx:id="mnSair" mnemonicParsing="false" onAction="#onClickMnSair" text="Sair" />
+                  <MenuItem fx:id="mnFilmes1" mnemonicParsing="false" onAction="#onClickMnF" text="Filmes" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Ajuda">
+          <Menu fx:id="menuAjuda" mnemonicParsing="false" text="Ajuda">
             <items>
-              <MenuItem mnemonicParsing="false" text="Sobre" />
+              <MenuItem fx:id="mnSobre" mnemonicParsing="false" onAction="#onClickMnSobre" text="Sobre" />
             </items>
           </Menu>
         </menus>
