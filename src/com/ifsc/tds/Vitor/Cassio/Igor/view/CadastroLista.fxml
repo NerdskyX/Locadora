@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ifst.tds.Vitor.Cassio.Igor.controller.C">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ifst.tds.Vitor.Cassio.Igor.controller.CadastroListaController">
    <children>
       <SplitPane dividerPositions="0.3494983277591973" prefHeight="400.0" prefWidth="600.0">
         <items>
@@ -29,7 +28,7 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="417.0">
                <children>
                   <Label layoutX="6.0" layoutY="14.0" text="Detalhes" />
-                  <GridPane layoutX="6.0" layoutY="59.0" prefHeight="118.0" prefWidth="374.0">
+                  <GridPane layoutX="6.0" layoutY="59.0" prefHeight="158.0" prefWidth="374.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -37,15 +36,18 @@
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Label text="Nome" />
                         <Label text="E-mail" GridPane.rowIndex="1" />
-                        <Label text="Data de cadastro" GridPane.rowIndex="2" />
+                        <Label text="Data de cadastro" GridPane.rowIndex="3" />
                         <Label fx:id="lblNome" text="--" GridPane.columnIndex="1" />
                         <Label fx:id="lblEmail" text="--" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label fx:id="lblData" text="--" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="lblData" text="--" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Telefone" GridPane.rowIndex="2" />
+                        <Label fx:id="lblTelefone" text="--" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                   <ButtonBar layoutX="96.0" layoutY="355.0" prefHeight="29.0" prefWidth="276.0">

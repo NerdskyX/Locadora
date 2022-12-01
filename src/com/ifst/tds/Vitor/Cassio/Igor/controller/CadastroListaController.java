@@ -28,6 +28,9 @@ public class CadastroListaController {
     private Label lblNome;
 
     @FXML
+    private Label lblTelefone;
+
+    @FXML
     private TableColumn<?, ?> tbcCodigo;
 
     @FXML
