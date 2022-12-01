@@ -1,9 +1,11 @@
 package com.ifsc.tds.Vitor.Cassio.Igor.entity;
 
+import java.sql.Date;
+
 public class Filmes {
 	private Long id;
 	private String nome;
-	private String data_lancamento;
+	private Date data_lancamento;
 	
 	public Long getId() {
 		return id;
@@ -17,13 +19,12 @@ public class Filmes {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getData_lancamento() {
+	public Date getData_lancamento() {
 		return data_lancamento;
 	}
-	public void setData_lancamento(String data_lancamento) {
+	public void setData_lancamento(Date data_lancamento) {
 		this.data_lancamento = data_lancamento;
 	}
-	
 	@Override
 	public String toString() {
 		return this.nome;
