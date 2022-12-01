@@ -1,13 +1,11 @@
 package com.ifst.tds.Vitor.Cassio.Igor.controller;
 
-import java.awt.Menu;
-import java.awt.MenuBar;
-import java.awt.MenuItem;
-import java.awt.event.ActionEvent;
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 public class MenuController {
 
@@ -30,9 +28,6 @@ public class MenuController {
     private MenuItem mnFilmes;
 
     @FXML
-    private MenuItem mnFilmes1;
-
-    @FXML
     private MenuItem mnSair;
 
     @FXML
@@ -40,29 +35,14 @@ public class MenuController {
 
     @FXML
     private VBox pnlPrincipal;
-    
-    private Stage stage;
-
-	public Stage getStage() {
-		return stage;
-	}
-
-	public void setStage(Stage stage) {
-		this.stage = stage;
-	}
 
     @FXML
     void onClickMnClientes(ActionEvent event) {
-    	
+
     }
 
     @FXML
     void onClickMnEmprestimos(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onClickMnF(ActionEvent event) {
 
     }
 
