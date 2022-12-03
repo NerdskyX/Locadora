@@ -7,7 +7,6 @@ public class Emprestimo {
 	private Long id;
 	private Date data_esmprestimo;
 	private Date data_entrega;
-	private String obs;
 	private String valorEmprestimo;
 	private Cliente cliente;
 	private Filmes filmes;
@@ -29,12 +28,6 @@ public class Emprestimo {
 	}
 	public void setData_entrega(Date data_entrega) {
 		this.data_entrega = data_entrega;
-	}
-	public String getObs() {
-		return obs;
-	}
-	public void setObs(String obs) {
-		this.obs = obs;
 	}
 	public String getValorEmprestimo() {
 		return valorEmprestimo;

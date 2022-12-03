@@ -1,10 +1,11 @@
 package com.ifsc.tds.Vitor.Cassio.Igor.menu;
 
+import java.awt.geom.Rectangle2D;
+
 import com.ifst.tds.Vitor.Cassio.Igor.controller.MenuController;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;

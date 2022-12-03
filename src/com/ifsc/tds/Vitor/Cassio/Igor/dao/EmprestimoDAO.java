@@ -48,7 +48,6 @@ public class EmprestimoDAO implements DAO<Emprestimo> {
 				Emprestimo.setId(rset.getLong("id"));
 				Emprestimo.setData_esmprestimo(rset.getDate("data_emprestimo"));
 				Emprestimo.setData_entrega(rset.getDate("data_entrega"));
-				Emprestimo.setObs(rset.getString("obs"));
 				Emprestimo.setValorEmprestimo(rset.getString("valorEmprestimo"));
 
 				// buscando as chaves estrangeiras
@@ -102,7 +101,6 @@ public class EmprestimoDAO implements DAO<Emprestimo> {
 				Emprestimo.setId(rset.getLong("id"));
 				Emprestimo.setData_esmprestimo(rset.getDate("data_emprestimo"));
 				Emprestimo.setData_entrega(rset.getDate("data_entrega"));
-				Emprestimo.setObs(rset.getString("obs"));
 				Emprestimo.setValorEmprestimo(rset.getString("valorEmprestimo"));
 
 				// buscando as chaves estrangeiras
@@ -132,7 +130,7 @@ public class EmprestimoDAO implements DAO<Emprestimo> {
 
 	@Override
 	public int save(Emprestimo Emprestimo) {
-		String sql = "insert into Emprestimo (data_emprestimo, data_entrega, obs, valorEmrpestimo, cliente_id, filmes_id)" + " values (?, ?, ?, ?, ?, ?)";
+		String sql = "insert into Emprestimo (data_emprestimo, data_entrega, valorEmrpestimo, cliente_id, filmes_id)" + " values (?, ?, ?, ?, ?)";
 
 		// Recupera a conex�o com o banco
 		Connection conexao = null;
@@ -147,10 +145,9 @@ public class EmprestimoDAO implements DAO<Emprestimo> {
 			stm = conexao.prepareStatement(sql);
 			stm.setDate(1, Emprestimo.getData_esmprestimo());
 			stm.setDate(2, Emprestimo.getData_entrega());
-			stm.setString(3, Emprestimo.getObs());
-			stm.setString(4, Emprestimo.getValorEmprestimo());
-			stm.setLong(5, Emprestimo.getCliente().getId());
-			stm.setLong(6, Emprestimo.getFilmes().getId());
+			stm.setString(3, Emprestimo.getValorEmprestimo());
+			stm.setLong(4, Emprestimo.getCliente().getId());
+			stm.setLong(5, Emprestimo.getFilmes().getId());
 
 			stm.execute();
 
@@ -175,7 +172,7 @@ public class EmprestimoDAO implements DAO<Emprestimo> {
 
 	@Override
 	public boolean update(Emprestimo Emprestimo, String[] params) {
-		String sql = "update Emprestimo set data_emprestimo = ?, data_entrega = ?, obs = ?, valorEmprestimo = ?, cliente_id = ?, filmes_id = ? where id = ?";
+		String sql = "update Emprestimo set data_emprestimo = ?, data_entrega = ?, valorEmprestimo = ?, cliente_id = ?, filmes_id = ? where id = ?";
 
 		// Recupera a conex�o com o banco
 		Connection conexao = null;
@@ -189,11 +186,10 @@ public class EmprestimoDAO implements DAO<Emprestimo> {
 			stm = conexao.prepareStatement(sql);
 			stm.setDate(1, Emprestimo.getData_esmprestimo());
 			stm.setDate(2, Emprestimo.getData_entrega());
-			stm.setString(3, Emprestimo.getObs());
-			stm.setString(4, Emprestimo.getValorEmprestimo());
-			stm.setLong(5, Emprestimo.getCliente().getId());
-			stm.setLong(6, Emprestimo.getFilmes().getId());
-			stm.setLong(7, Emprestimo.getId());
+			stm.setString(3, Emprestimo.getValorEmprestimo());
+			stm.setLong(4, Emprestimo.getCliente().getId());
+			stm.setLong(5, Emprestimo.getFilmes().getId());
+			stm.setLong(6, Emprestimo.getId());
 			
 
 			stm.execute();
