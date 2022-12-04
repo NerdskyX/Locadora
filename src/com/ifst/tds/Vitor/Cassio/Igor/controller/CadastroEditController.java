@@ -1,16 +1,20 @@
 package com.ifst.tds.Vitor.Cassio.Igor.controller;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import com.ifsc.tds.Vitor.Cassio.Igor.entity.Cliente;
 import com.peregrinoti.entity.Caixa;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class CadastroEditController {
+public class CadastroEditController implements Initializable {
 
     @FXML
     private Button btnCancelar;
@@ -48,6 +52,11 @@ public class CadastroEditController {
 			this.okClick = true;
 			this.getJanelaCadastroEdit().close();
 		}
+	}
+    
+    @Override
+	public void initialize(URL location, ResourceBundle resources) {
+
 	}
     
 	public Stage getJanelaCadastroEdit() {
