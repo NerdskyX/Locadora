@@ -40,7 +40,7 @@ public class ClienteDAO implements DAO<Cliente> {
 				Cliente.setNome(rset.getString("nome"));
 				Cliente.setEmail(rset.getString("email"));
 				Cliente.setTelefone(rset.getString("telefone"));
-				Cliente.setData_cadastro(rset.getDate("data_cadastro"));
+				Cliente.setData_cadastro(rset.getString("data_cadastro"));
 			}
 
 		} catch (Exception e) {
@@ -91,7 +91,7 @@ public class ClienteDAO implements DAO<Cliente> {
 				Cliente.setNome(rset.getString("nome"));
 				Cliente.setEmail(rset.getString("email"));
 				Cliente.setTelefone(rset.getString("telefone"));
-				Cliente.setData_cadastro(rset.getDate("data_cadastro"));
+				Cliente.setData_cadastro(rset.getString("data_cadastro"));
 
 				Clientes.add(Cliente);
 			}
@@ -132,7 +132,7 @@ public class ClienteDAO implements DAO<Cliente> {
 			stm.setString(1, Cliente.getNome());
 			stm.setString(2, Cliente.getEmail());
 			stm.setString(3, Cliente.getTelefone());
-			stm.setDate(4, Cliente.getData_cadastro());
+			stm.setString(4, Cliente.getData_cadastro());
 
 			stm.execute();
 
@@ -172,7 +172,7 @@ public class ClienteDAO implements DAO<Cliente> {
 			stm.setString(1, Cliente.getNome());
 			stm.setString(2, Cliente.getEmail());
 			stm.setString(3, Cliente.getTelefone());
-			stm.setDate(4, Cliente.getData_cadastro());
+			stm.setString(4, Cliente.getData_cadastro());
 			stm.setLong(5, Cliente.getId());
 
 			stm.execute();

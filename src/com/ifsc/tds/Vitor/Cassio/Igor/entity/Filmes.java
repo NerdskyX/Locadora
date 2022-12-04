@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Filmes {
 	private Long id;
 	private String nome;
-	private Date data_lancamento;
+	private String data_lancamento;
 	
 	public Long getId() {
 		return id;
@@ -19,10 +19,10 @@ public class Filmes {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Date getData_lancamento() {
+	public String getData_lancamento() {
 		return data_lancamento;
 	}
-	public void setData_lancamento(Date data_lancamento) {
+	public void setData_lancamento(String data_lancamento) {
 		this.data_lancamento = data_lancamento;
 	}
 	@Override

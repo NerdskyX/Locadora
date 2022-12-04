@@ -1,13 +1,16 @@
 package com.ifsc.tds.Vitor.Cassio.Igor.entity;
 
-import java.sql.Date;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Cliente {
 	private Long id;
 	private String nome;
 	private String email;
 	private String telefone;
-	private Date data_cadastro;
+	private String data_cadastro;
 	
 	public Long getId() {
 		return id;
@@ -33,11 +36,14 @@ public class Cliente {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public Date getData_cadastro() {
+	public String getData_cadastro() {
 		return data_cadastro;
 	}
-	public void setData_cadastro(Date data_cadastro) {
-		this.data_cadastro = data_cadastro;
+	public void setData_cadastro(String data_cadastro) {
+		DateFormat df = new SimpleDateFormat(data_cadastro);
+		Date today = Calendar.getInstance().getTime();
+		String dateToString = df.format(today);
+		this.data_cadastro = dateToString;
 	}
 	
 	@Override

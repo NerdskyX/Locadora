@@ -38,7 +38,7 @@ public class FilmesDAO implements DAO<Filmes> {
 				// atribui campo para atributo
 				Filmes.setId(rset.getLong("id"));
 				Filmes.setNome(rset.getString("nome"));
-				Filmes.setData_lancamento(rset.getDate("data_lancamento"));
+				Filmes.setData_lancamento(rset.getString("data_lancamento"));
 			}
 
 		} catch (Exception e) {
@@ -87,7 +87,7 @@ public class FilmesDAO implements DAO<Filmes> {
 				// atribui campo para atributo
 				Filmes.setId(rset.getLong("id"));
 				Filmes.setNome(rset.getString("nome"));
-				Filmes.setData_lancamento(rset.getDate("data_lancamento"));
+				Filmes.setData_lancamento(rset.getString("data_lancamento"));
 
 				Filmess.add(Filmes);
 			}
@@ -126,7 +126,7 @@ public class FilmesDAO implements DAO<Filmes> {
 
 			stm = conexao.prepareStatement(sql);
 			stm.setString(1, Filmes.getNome());
-			stm.setDate(2, Filmes.getData_lancamento());
+			stm.setString(2, Filmes.getData_lancamento());
 
 			stm.execute();
 
@@ -164,7 +164,7 @@ public class FilmesDAO implements DAO<Filmes> {
 
 			stm = conexao.prepareStatement(sql);
 			stm.setString(1, Filmes.getNome());
-			stm.setDate(2, Filmes.getData_lancamento());
+			stm.setString(2, Filmes.getData_lancamento());
 			stm.setLong(3, Filmes.getId());
 
 			stm.execute();
