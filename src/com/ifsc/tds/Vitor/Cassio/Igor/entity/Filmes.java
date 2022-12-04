@@ -20,13 +20,11 @@ public class Filmes {
 	public String getData_lancamento() {
 		return data_lancamento;
 	}
-<<<<<<< HEAD
-	public void setData_lancamento(String data_lancamento) {
+	public void setData_lancamento1(String data_lancamento) {
 		this.data_lancamento = data_lancamento;
-=======
+	}
 	public void setData_lancamento(String string) {
 		this.data_lancamento = string;
->>>>>>> b5db7d191168798629a38d450e6f7b26f2473288
 	}
 	@Override
 	public String toString() {
