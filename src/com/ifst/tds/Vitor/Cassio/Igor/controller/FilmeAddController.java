@@ -80,6 +80,10 @@ public class FilmeAddController implements Initializable {
 		if (this.txtNome.getText() == null || this.txtNome.getText().trim().length() == 0) {
 			mensagemErros += "Informe o nome!\n";
 		}
+		
+		if (this.txtLancamento.getText() == null || this.txtLancamento.getText().trim().length() == 0) {
+			mensagemErros += "Informe a data de lancamento!\n";
+		}
 
 		if (mensagemErros.length() == 0) {
 			return true;
