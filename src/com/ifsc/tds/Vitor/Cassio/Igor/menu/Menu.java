@@ -16,7 +16,7 @@ public class Menu extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			// carregando o loader
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ifsc/tds/Vitor/Cassio/Igore/view/Menu.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ifsc/tds/Vitor/Cassio/Igor/view/Menu.fxml"));
 			Parent menuXML = loader.load();
 
 			// carregando o controller e a scene
@@ -48,5 +48,9 @@ public class Menu extends Application {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static void main(String[] args) {
+		launch(args);
 	}
 }
