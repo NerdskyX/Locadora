@@ -62,7 +62,7 @@ public class CadastroEditController implements Initializable {
 		return janelaCadastroEdit;
 	}
 
-	public void setJanelaCaixaEdit(Stage janelaCadastroEdit) {
+	public void setJanelaCadastroEdit(Stage janelaCadastroEdit) {
 		this.janelaCadastroEdit = janelaCadastroEdit;
 	}
 	
