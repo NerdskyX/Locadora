@@ -1,7 +1,7 @@
 package com.ifsc.tds.Vitor.Cassio.Igor.menu;
 
-import java.awt.geom.Rectangle2D;
 
+import javafx.geometry.Rectangle2D;
 import com.ifst.tds.Vitor.Cassio.Igor.controller.MenuController;
 
 import javafx.application.Application;
@@ -12,14 +12,12 @@ import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-public class Menu {
-
-	public class menu extends Application {
+public class Menu extends Application {
 		@Override
 		public void start(Stage primaryStage) {
 			try {
 				// carregando o loader
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ifsc/tds/Vitor/Cassio/Igor/view/ContatoLista.fxml"));
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ifsc/tds/Vitor/Cassio/Igor/view/Menu.fxml"));
 				Parent menuXML = loader.load();
 
 				// carregando o controller e a scene
@@ -57,3 +55,4 @@ public class Menu {
 			launch(args);
 		}
 	}
+	

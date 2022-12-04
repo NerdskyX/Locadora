@@ -191,7 +191,7 @@ public class CadastroListaController {
 	public boolean onShowTelaClienteEditar(Cliente Cliente, String operacao) {
 		try {
 			// carregando o loader
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/peregrinoti/view/ClienteEdit.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ifst/tds/Vitor/Cassio/Igor/controller/CadastroEditController.fxml"));
 			Parent ClienteEditXML = loader.load();
 
 			// criando uma janela nova
