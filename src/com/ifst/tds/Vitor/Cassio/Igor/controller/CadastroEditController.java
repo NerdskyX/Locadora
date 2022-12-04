@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.ifsc.tds.Vitor.Cassio.Igor.entity.Cliente;
-import com.peregrinoti.entity.Caixa;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
