@@ -70,7 +70,7 @@ public class CadastroListaController {
     	Cliente cliente = this.tbvCadastro.getSelectionModel().getSelectedItem();
 
 		if (cliente != null) {
-			boolean btnConfirmarClic = this.onShowTelaclienteEditar(cliente, CadastroListaController.CLIENTE_EDITAR);
+			boolean btnConfirmarClic = this.onShowTelaCadastroEditar(cliente, CadastroListaController.CLIENTE_EDITAR);
 
 			if (btnConfirmarClic) {
 				this.getClienteDAO().update(cliente, null);
@@ -113,7 +113,7 @@ public class CadastroListaController {
     void onClickBtnIncluir(ActionEvent event) {
     	Cliente cliente = new Cliente();
 
-		boolean btnConfirmarClic = this.onShowTelaClienteEditar(cliente, CadastroListaController.CLIENTE_INCLUIR);
+		boolean btnConfirmarClic = this.onShowTelaCadastroEditar(cliente, CadastroListaController.CLIENTE_INCLUIR);
 
 		if (btnConfirmarClic) {
 			this.getClienteDAO().save(cliente);
@@ -188,30 +188,30 @@ public class CadastroListaController {
 		return result.get() == buttonTypeYES ? true : false;
 	}
 
-	public boolean onShowTelaClienteEditar(Cliente Cliente, String operacao) {
+	public boolean onShowTelaCadastroEditar(Cliente cadastro, String operacao) {
 		try {
 			// carregando o loader
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ifst/tds/Vitor/Cassio/Igor/controller/CadastroEditController.fxml"));
 			Parent ClienteEditXML = loader.load();
 
 			// criando uma janela nova
-			Stage janelaClienteEditar = new Stage();
-			janelaClienteEditar.setTitle("Cadastro de Cliente" + operacao);
-			janelaClienteEditar.initModality(Modality.APPLICATION_MODAL);
-			janelaClienteEditar.resizableProperty().setValue(Boolean.FALSE);
+			Stage janelaCadastroEditar = new Stage();
+			janelaCadastroEditar.setTitle("Cadastro de Cliente" + operacao);
+			janelaCadastroEditar.initModality(Modality.APPLICATION_MODAL);
+			janelaCadastroEditar.resizableProperty().setValue(Boolean.FALSE);
 
 			Scene ClienteEditLayout = new Scene(ClienteEditXML);
-			janelaClienteEditar.setScene(ClienteEditLayout);
+			janelaCadastroEditar.setScene(ClienteEditLayout);
 
 			// carregando o controller e a scene
-			CadastroEditController ClienteEditController = loader.getController();
-			CadastroEditController.setJanelaCadastroEdit(janelaClienteEditar);
-			CadastroEditController.populaTela(Cliente);
+			CadastroEditController cadastroEditController = loader.getController();
+			cadastroEditController.setJanelaCadastroEdit(janelaCadastroEditar);
+			cadastroEditController.populaTela(cadastro);
 
 			// mostrando a tela
-			janelaClienteEditar.showAndWait();
+			janelaCadastroEditar.showAndWait();
 
-			return ClienteEditController.isOkClick();
+			return cadastroEditController.isOkClick();
 
 		} catch (Exception e) {
 			e.printStackTrace();
