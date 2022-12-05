@@ -60,7 +60,7 @@ public class CadastroListaController {
     
     private List<Cliente> listaCliente;
 	private ObservableList<Cliente> observableListaCliente = FXCollections.observableArrayList();
-	private ClienteDAO ClienteDAO;
+	private ClienteDAO clienteDAO;
 
 	public static final String CLIENTE_EDITAR = " - Editar";
 	public static final String CLIENTE_INCLUIR = " - Incluir";
@@ -122,11 +122,11 @@ public class CadastroListaController {
     }
     
     public ClienteDAO getClienteDAO() {
-		return ClienteDAO;
+		return clienteDAO;
 	}
 
-	public void setClienteDAO(ClienteDAO ClienteDAO) {
-		this.ClienteDAO = ClienteDAO;
+	public void setClienteDAO(ClienteDAO clienteDAO) {
+		this.clienteDAO = clienteDAO;
 	}
 
 	public List<Cliente> getListaCliente() {
@@ -163,12 +163,12 @@ public class CadastroListaController {
 		this.tbvCadastro.setItems(this.getObservableListaCliente());
 	}
 
-	public void selecionarItemTableViewClientes(Cliente Cliente) {
-		if (Cliente != null) {
-			this.lblNome.setText(Cliente.getNome());
-			this.lblTelefone.setText(Cliente.getTelefone());
-			this.lblEmail.setText(Cliente.getEmail());
-			this.lblData.setText(Cliente.getData_cadastro());
+	public void selecionarItemTableViewClientes(Cliente cliente) {
+		if (cliente != null) {
+			this.lblNome.setText(cliente.getNome());
+			this.lblTelefone.setText(cliente.getTelefone());
+			this.lblEmail.setText(cliente.getEmail());
+			this.lblData.setText(cliente.getData_cadastro());
 		} else {
 			this.lblNome.setText("");
 			this.lblTelefone.setText("");

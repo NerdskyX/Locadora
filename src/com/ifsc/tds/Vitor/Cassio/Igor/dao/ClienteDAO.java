@@ -116,7 +116,7 @@ public class ClienteDAO implements DAO<Cliente> {
 
 	@Override
 	public int save(Cliente Cliente) {
-		String sql = "insert into Cliente (nome, email, telefone, data_cadastro )" + " values (?, ?, ?. ?)";
+		String sql = "insert into cliente (nome, email, telefone, data_cadastro )" + " values (?, ?, ?. ?)";
 
 		// Recupera a conex�o com o banco
 		Connection conexao = null;
