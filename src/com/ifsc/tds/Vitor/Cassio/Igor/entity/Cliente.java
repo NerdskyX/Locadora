@@ -39,7 +39,7 @@ public class Cliente {
 	public String getData_cadastro() {
 		return data_cadastro;
 	}
-	public void setData_cadastro(String data_cadastro) {
+	public void setData_cadastro() {
 		DateFormat df = new SimpleDateFormat(data_cadastro);
 		Date today = Calendar.getInstance().getTime();
 		String dateToString = df.format(today);
