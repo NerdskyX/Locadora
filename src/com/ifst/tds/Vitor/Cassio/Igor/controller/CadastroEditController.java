@@ -43,14 +43,14 @@ public class CadastroEditController implements Initializable {
 
     @FXML
     void onClickBtnConfirmar(ActionEvent event) {
-    	//if (validarCampos()) {
+    	if (validarCampos()) {
 			this.cadastro.setNome(this.txtNome.getText());
 			this.cadastro.setTelefone(this.txtTelefone.getText());
 			this.cadastro.setEmail(this.txtEmail.getText());
 
 			this.okClick = true;
 			this.getJanelaCadastroEdit().close();
-		//}
+		}
 	}
     
     @Override
@@ -78,7 +78,7 @@ public class CadastroEditController implements Initializable {
 		return okClick;
 	}
 	
-	/*private boolean validarCampos() {
+	private boolean validarCampos() {
 		String mensagemErros = new String();
 
 		if (this.txtNome.getText() == null || this.txtNome.getText().trim().length() == 0) {
@@ -106,7 +106,7 @@ public class CadastroEditController implements Initializable {
 
 			return false;
 		}
-	}*/
+	}
 
 }
 
