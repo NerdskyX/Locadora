@@ -1,4 +1,4 @@
-package application;
+package com.ifsc.tds.Vitor.Cassio.Igor.menu;
 	
 import javafx.application.Application;
 import javafx.stage.Stage;
