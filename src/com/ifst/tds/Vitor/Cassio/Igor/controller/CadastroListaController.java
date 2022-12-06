@@ -168,7 +168,6 @@ public class CadastroListaController {
 			this.lblNome.setText(cliente.getNome());
 			this.lblTelefone.setText(cliente.getTelefone());
 			this.lblEmail.setText(cliente.getEmail());
-			this.lblData.setText(cliente.getData_cadastro());
 		} else {
 			this.lblNome.setText("");
 			this.lblTelefone.setText("");

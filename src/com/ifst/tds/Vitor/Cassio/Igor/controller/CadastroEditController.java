@@ -47,7 +47,6 @@ public class CadastroEditController implements Initializable {
 			this.cadastro.setNome(this.txtNome.getText());
 			this.cadastro.setTelefone(this.txtTelefone.getText());
 			this.cadastro.setEmail(this.txtEmail.getText());
-			this.cadastro.setData_cadastro();
 
 			this.okClick = true;
 			this.getJanelaCadastroEdit().close();
