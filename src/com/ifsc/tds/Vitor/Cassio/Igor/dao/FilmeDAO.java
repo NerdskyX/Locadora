@@ -8,24 +8,20 @@ import java.util.List;
 
 import com.ifsc.tds.Vitor.Cassio.Igor.entity.Filmes;
 
-public class FilmesDAO implements DAO<Filmes> {
+public class FilmeDAO implements DAO<Filmes>{
 
 	@Override
 	public Filmes get(Long id) {
-		Filmes Filmes = null;
-		String sql = "select * from Filmes where id = ?";
+		Filmes filmes = null;
+		String sql = "select * from filmes where id = ?";
 
-		// Recupera a conex�o com o banco
 		Connection conexao = null;
 
-		// Criar uma prepara��o da consulta
 		PreparedStatement stm = null;
 
-		// Criar uma classe que guarde o retorno da opera��o
 		ResultSet rset = null;
 
 		try {
-
 			conexao = new Conexao().getConnection();
 
 			stm = conexao.prepareStatement(sql);
@@ -33,12 +29,12 @@ public class FilmesDAO implements DAO<Filmes> {
 			rset = stm.executeQuery();
 
 			while (rset.next()) {
-				Filmes = new Filmes();
+				filmes = new Filmes();
 
-				// atribui campo para atributo
-				Filmes.setId(rset.getLong("id"));
-				Filmes.setNome(rset.getString("nome"));
-				Filmes.setData_lancamento(rset.getString("data_lancamento"));
+				filmes.setId(rset.getLong("id"));
+				filmes.setNome(rset.getString("nome"));
+				filmes.setDataLancamento(rset.getDate("data_lancamento"));
+				
 			}
 
 		} catch (Exception e) {
@@ -56,40 +52,35 @@ public class FilmesDAO implements DAO<Filmes> {
 				e.printStackTrace();
 			}
 		}
-		return Filmes;
+
+		return filmes;
 	}
 
 	@Override
 	public List<Filmes> getAll() {
-		List<Filmes> Filmess = new ArrayList<Filmes>();
+		List<Filmes> filmes = new ArrayList<Filmes>();
+		String sql = "select * from filmes";
 
-		String sql = "select * from Filmes";
-
-		// Recupera a conex�o com o banco
 		Connection conexao = null;
 
-		// Criar uma prepara��o da consulta
 		PreparedStatement stm = null;
 
-		// Criar uma classe que guarde o retorno da opera��o
 		ResultSet rset = null;
 
 		try {
-
 			conexao = new Conexao().getConnection();
 
 			stm = conexao.prepareStatement(sql);
 			rset = stm.executeQuery();
 
 			while (rset.next()) {
-				Filmes Filmes = new Filmes();
+				Filmes filme = new Filmes();
 
-				// atribui campo para atributo
-				Filmes.setId(rset.getLong("id"));
-				Filmes.setNome(rset.getString("nome"));
-				Filmes.setData_lancamento(rset.getString("data_lancamento"));
+				filme.setId(rset.getLong("id"));
+				filme.setNome(rset.getString("nome"));
+				filme.setDataLancamento(rset.getDate("data_lancamento"));
 
-				Filmess.add(Filmes);
+				filmes.add(filme);
 			}
 
 		} catch (Exception e) {
@@ -107,26 +98,24 @@ public class FilmesDAO implements DAO<Filmes> {
 				e.printStackTrace();
 			}
 		}
-		return Filmess;
+
+		return filmes;
 	}
 
 	@Override
-	public int save(Filmes Filmes) {
-		String sql = "insert into Filmes (nome, data_lancamento )" + " values (?, ?)";
+	public int save(Filmes filmes) {
+		String sql = "insert into filmes(nome, data_lancamento)" + " values(?, ?)";
 
-		// Recupera a conex�o com o banco
 		Connection conexao = null;
 
-		// Criar uma prepara��o da consulta
 		PreparedStatement stm = null;
 
 		try {
-
 			conexao = new Conexao().getConnection();
 
 			stm = conexao.prepareStatement(sql);
-			stm.setString(1, Filmes.getNome());
-			stm.setString(2, Filmes.getData_lancamento());
+			stm.setString(1, filmes.getNome());
+			stm.setDate(2, filmes.getDataLancamento());
 
 			stm.execute();
 
@@ -146,26 +135,25 @@ public class FilmesDAO implements DAO<Filmes> {
 				e.printStackTrace();
 			}
 		}
+
 		return 0;
 	}
 
 	@Override
-	public boolean update(Filmes Filmes, String[] params) {
-		String sql = "update Filmes set nome = ?, data_lancamento = ? where id = ?";
+	public boolean update(Filmes filmes, String[] params) {
+		String sql = "update filmes set nome =  ?, data_lancamento = ? where id = ?";
 
-		// Recupera a conex�o com o banco
 		Connection conexao = null;
 
-		// Criar uma prepara��o da consulta
 		PreparedStatement stm = null;
 
 		try {
 			conexao = new Conexao().getConnection();
 
 			stm = conexao.prepareStatement(sql);
-			stm.setString(1, Filmes.getNome());
-			stm.setString(2, Filmes.getData_lancamento());
-			stm.setLong(3, Filmes.getId());
+			stm.setString(1, filmes.getNome());
+			stm.setDate(2, filmes.getDataLancamento());
+			stm.setLong(3, filmes.getId());
 
 			stm.execute();
 
@@ -185,24 +173,25 @@ public class FilmesDAO implements DAO<Filmes> {
 				e.printStackTrace();
 			}
 		}
+
 		return false;
 	}
 
 	@Override
-	public boolean delete(Filmes Filmes) {
-		String sql = "delete from Filmes where id = ?";
+	public boolean delete(Filmes filmes) {
+		String sql = "delete from filmes where id = ?";
 
-		// Recupera a conex�o com o banco
 		Connection conexao = null;
 
-		// Criar uma prepara��o da consulta
 		PreparedStatement stm = null;
 
 		try {
 			conexao = new Conexao().getConnection();
 
 			stm = conexao.prepareStatement(sql);
-			stm.setLong(1, Filmes.getId());
+
+			stm.setLong(1, filmes.getId());
+
 			stm.execute();
 
 		} catch (Exception e) {
@@ -223,5 +212,5 @@ public class FilmesDAO implements DAO<Filmes> {
 		}
 		return false;
 	}
-}
 
+}

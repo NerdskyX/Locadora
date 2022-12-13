@@ -15,17 +15,13 @@ public class ClienteDAO implements DAO<Cliente> {
 		Cliente cliente = null;
 		String sql = "select * from cliente where id = ?";
 
-		// Recupera a conex�o com o banco
 		Connection conexao = null;
 
-		// Criar uma prepara��o da consulta
 		PreparedStatement stm = null;
 
-		// Criar uma classe que guarde o retorno da opera��o
 		ResultSet rset = null;
 
 		try {
-
 			conexao = new Conexao().getConnection();
 
 			stm = conexao.prepareStatement(sql);
@@ -57,26 +53,22 @@ public class ClienteDAO implements DAO<Cliente> {
 				e.printStackTrace();
 			}
 		}
+
 		return cliente;
 	}
 
 	@Override
 	public List<Cliente> getAll() {
 		List<Cliente> clientes = new ArrayList<Cliente>();
-
 		String sql = "select * from cliente";
 
-		// Recupera a conex�o com o banco
 		Connection conexao = null;
 
-		// Criar uma prepara��o da consulta
 		PreparedStatement stm = null;
 
-		// Criar uma classe que guarde o retorno da opera��o
 		ResultSet rset = null;
 
 		try {
-
 			conexao = new Conexao().getConnection();
 
 			stm = conexao.prepareStatement(sql);
@@ -85,7 +77,6 @@ public class ClienteDAO implements DAO<Cliente> {
 			while (rset.next()) {
 				Cliente cliente = new Cliente();
 
-				// atribui campo para atributo
 				cliente.setId(rset.getLong("id"));
 				cliente.setNome(rset.getString("nome"));
 				cliente.setEmail(rset.getString("email"));
@@ -109,28 +100,26 @@ public class ClienteDAO implements DAO<Cliente> {
 				e.printStackTrace();
 			}
 		}
+
 		return clientes;
 	}
 
 	@Override
 	public int save(Cliente cliente) {
-		String sql = "insert into cliente (nome, email, telefone)" + " values (?, ?, ?)";
+		String sql = "insert into cliente(nome, email, telefone)" + " values(?, ?, ?)";
 
-		// Recupera a conex�o com o banco
 		Connection conexao = null;
 
-		// Criar uma prepara��o da consulta
 		PreparedStatement stm = null;
 
 		try {
-
 			conexao = new Conexao().getConnection();
 
 			stm = conexao.prepareStatement(sql);
 			stm.setString(1, cliente.getNome());
 			stm.setString(2, cliente.getEmail());
 			stm.setString(3, cliente.getTelefone());
-			
+
 			stm.execute();
 
 		} catch (Exception e) {
@@ -149,17 +138,16 @@ public class ClienteDAO implements DAO<Cliente> {
 				e.printStackTrace();
 			}
 		}
+
 		return 0;
 	}
 
 	@Override
 	public boolean update(Cliente cliente, String[] params) {
-		String sql = "update Cliente set nome = ?, email = ?, telefone = ? where id = ?";
+		String sql = "update cliente set nome =  ?, email = ?, telefone = ? where id = ?";
 
-		// Recupera a conex�o com o banco
 		Connection conexao = null;
 
-		// Criar uma prepara��o da consulta
 		PreparedStatement stm = null;
 
 		try {
@@ -169,8 +157,7 @@ public class ClienteDAO implements DAO<Cliente> {
 			stm.setString(1, cliente.getNome());
 			stm.setString(2, cliente.getEmail());
 			stm.setString(3, cliente.getTelefone());
-	
-			stm.setLong(5, cliente.getId());
+			stm.setLong(4, cliente.getId());
 
 			stm.execute();
 
@@ -190,6 +177,7 @@ public class ClienteDAO implements DAO<Cliente> {
 				e.printStackTrace();
 			}
 		}
+
 		return false;
 	}
 
@@ -197,17 +185,17 @@ public class ClienteDAO implements DAO<Cliente> {
 	public boolean delete(Cliente cliente) {
 		String sql = "delete from cliente where id = ?";
 
-		// Recupera a conex�o com o banco
 		Connection conexao = null;
 
-		// Criar uma prepara��o da consulta
 		PreparedStatement stm = null;
 
 		try {
 			conexao = new Conexao().getConnection();
 
 			stm = conexao.prepareStatement(sql);
+
 			stm.setLong(1, cliente.getId());
+
 			stm.execute();
 
 		} catch (Exception e) {
@@ -228,5 +216,5 @@ public class ClienteDAO implements DAO<Cliente> {
 		}
 		return false;
 	}
-}
 
+}
