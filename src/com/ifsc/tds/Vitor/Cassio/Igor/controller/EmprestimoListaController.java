@@ -1,4 +1,4 @@
-package com.ifst.tds.Vitor.Cassio.Igor.controller;
+package com.ifsc.tds.Vitor.Cassio.Igor.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
